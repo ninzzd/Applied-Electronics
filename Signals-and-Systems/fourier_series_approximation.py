@@ -49,44 +49,44 @@ for i in t:
     else:
         x1.append(1*(i)/np.pi)
 x1 = np.array(x1)
-
-n = 100
-
-d_n = dirichletKernel(n,t)
-
-f_n = fejerKernel(n,t)
-    
-s_n_1 = convolve(x1,d_n)
-
-s_n_2 = convolve(x1,f_n)
-
 plt.plot(t,x1)
 plt.ylabel('x(t)')
 plt.xlabel('t')
 plt.xlim(right = +np.pi,left = -np.pi)
 plt.show()
 
-plt.plot(t,d_n)
-plt.ylabel('Dn(t)')
-plt.xlabel('t')
-plt.xlim(right = +np.pi,left = -np.pi)
-plt.show()
+n = [100]
+for i in n:
 
-plt.plot(t,f_n)
-plt.ylabel('Fn(t)')
-plt.xlabel('t')
-plt.xlim(right = +np.pi,left = -np.pi)
-plt.show()
+    d_n = dirichletKernel(i,t)
+
+    f_n = fejerKernel(i,t)
+        
+    s_n_1 = convolve(x1,d_n)
+
+    s_n_2 = convolve(x1,f_n)
+
+    # plt.plot(t,d_n)
+    # plt.ylabel('Dn(t)')
+    # plt.xlabel('t')
+    # plt.xlim(right = +np.pi,left = -np.pi)
+    # plt.show()
+
+    # plt.plot(t,f_n)
+    # plt.ylabel('Fn(t)')
+    # plt.xlabel('t')
+    # plt.xlim(right = +np.pi,left = -np.pi)
+    # plt.show()
 
 
-plt.plot(t,s_n_1)
-plt.ylabel('Sn(t) [Dirichlet]')
-plt.xlabel('t')
-plt.xlim(right = +np.pi,left = -np.pi)
-plt.show()
+    plt.plot(t,s_n_1)
+    plt.ylabel('Sn(t) [Dirichlet]')
+    plt.xlabel('t')
+    plt.xlim(right = +np.pi,left = -np.pi)
+    plt.show()
 
-plt.plot(t,s_n_2)
-plt.ylabel('Sn(t) [Fejer]')
-plt.xlabel('t')
-plt.xlim(right = +np.pi,left = -np.pi)
-plt.show()
+    plt.plot(t,s_n_2)
+    plt.ylabel('Sn(t) [Fejer]')
+    plt.xlabel('t')
+    plt.xlim(right = +np.pi,left = -np.pi)
+    plt.show()

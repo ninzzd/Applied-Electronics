@@ -29,8 +29,9 @@ t = np.linspace(0,2*np.pi,int(np.exp2(10.0)))
 #     else:
 #         x1.append(0.0)
 # x1 = np.array(x1)
-x1 = np.sin(t)
-x1_hat = np.array(fft(x1.tolist()))
+x1 = np.sin(2*t)
+# x1_hat = np.array(fft(x1.tolist()))
+x1_hat = np.fft.fft(x1)
 
 
 plt.plot(t,x1)
