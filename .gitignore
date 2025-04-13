@@ -1,0 +1,6 @@
+#Ignore the VS Code Configuration Folder
+.vscode/
+
+#Ignore the VS Code JSON files
+.vscode/c_cpp_properties.json
+.vscode/settings.json
